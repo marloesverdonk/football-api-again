@@ -9,4 +9,10 @@ teamRouter.get('/team', (req, res, next) =>
       .catch(next)
 )
 
+teamRouter.post('/team', (req, res, next) => 
+  Team.create(req.body)
+      .then(team => res.send(team))
+      .catch(next)
+)
+
 module.exports = teamRouter
